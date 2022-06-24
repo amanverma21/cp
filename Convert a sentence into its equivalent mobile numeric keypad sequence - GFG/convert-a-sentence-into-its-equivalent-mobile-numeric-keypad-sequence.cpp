@@ -32,7 +32,7 @@ string printSequence(string S)
        {
            ans+='0';
            continue;
-       }
+       }    
        int x=S[i]-'A';
        if(x<18||(x>18&&x<=20)||(x>=22&&x<24))
        {
