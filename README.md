@@ -1,2 +1,2 @@
 # cp
-Collection of LeetCode questions - Automated sync 
+Collection of LeetCode and GFG questions - Automated sync 
