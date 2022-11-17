@@ -10,7 +10,7 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:
-	 #define ll long long
+	// #define ll long long
 
 	ll countSubarray(int arr[], int n, int k) {
 	    // code here
