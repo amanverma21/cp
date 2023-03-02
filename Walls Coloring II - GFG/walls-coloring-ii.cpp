@@ -27,10 +27,8 @@ public:
             else if(cost[0][i] < smini.first)
                 smini = {cost[0][i], i};
         }
-        
         for(int i=1; i<n; i++){
             pair<int,int> curMini = {INT_MAX,-1}, curSmini = {INT_MAX,-1};
-            
             for(int j=0; j<k; j++){
                 int x = cost[i][j];
                 if(j != mini.second)
