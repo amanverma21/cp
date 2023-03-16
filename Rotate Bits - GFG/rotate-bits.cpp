@@ -9,10 +9,11 @@ class Solution
         vector <int> rotate (int n, int d)
         {
             //code here.
+            int a,b;
             d = d%16;
-           int l = ((n<<d)|(n>>(16-d)))&65535;
-           int r = ((n>>d)|(n<<(16-d)))&65535;
-           return {l,r};
+            a=(n<<d|(n>>(16-d)))&0xFFFF;
+            b=(n>>d|(n<<(16-d)))&0xFFFF;
+            return{a,b};
         }
 };
 
