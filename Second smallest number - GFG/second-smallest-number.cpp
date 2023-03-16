@@ -11,8 +11,8 @@ class Solution{
     string secondSmallest(int S, int D){
         // code here 
          if(S==1 || D==1) return "-1";
-         if(S>9*D) return "-1";
-         if(S==9*D) return "-1";
+         if(S>=9*D) return "-1";
+        //  if(S==9*D) return "-1";
          
          string ans(D,'0');
          int sum=S;
