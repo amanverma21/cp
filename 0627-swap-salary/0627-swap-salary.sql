@@ -1,1 +1,1 @@
-update salary set sex = IF (sex = "f", "m", "f");
+update salary set sex = IF (sex = "m", "f", "m");
