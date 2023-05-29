@@ -1,20 +1,20 @@
 class ParkingSystem {
 public:
-    int v[3];
+    vector<int> v;
     ParkingSystem(int big, int medium, int small) {
-        v[0]=big;
-        v[1]=medium;
-        v[2]=small;
+        v.push_back(big);
+        v.push_back(medium);
+        v.push_back(small);
     }
+    
     bool addCar(int carType) {
-        if(v[carType-1]!=0){
-            v[carType-1]=v[carType-1]-1;
+        if(v[carType-1]>0)
+        {
+            v[carType-1]--;
             return true;
         }
         return false;
     }
-    
-    
     
 };
 
