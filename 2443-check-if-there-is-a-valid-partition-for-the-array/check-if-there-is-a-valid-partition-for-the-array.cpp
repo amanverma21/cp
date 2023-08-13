@@ -5,7 +5,7 @@ public:
         if(i == n) return true;
         bool ans = false;
         if(dp[i]!=-1) return dp[i];
-        if(i + 1 < n && nums[i]==nums[i + 1]){
+        if(i+1<n && nums[i]==nums[i + 1]){
             ans = solve(nums, i + 2, dp);
             if(i+2<n && nums[i + 1]==nums[i + 2])
                 ans = ans || solve(nums, i + 3, dp);
