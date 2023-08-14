@@ -9,17 +9,28 @@ public:
     vector<int> singleNumber(vector<int> nums) 
     {
         // Code here.
-        unordered_map<int,int>m;
-        for(int i=0;i<nums.size();i++){
-            m[nums[i]]++;
+        
+        //naive 
+        // sort(nums.begin(), nums.end());
+        // for(int i = 0;i<)
+        int n = nums.size();
+        int xor1 = nums[0];
+        vector<int>ans;
+        for(int i=1;i<n;i++) xor1 = xor1^nums[i];
+        int right_bit = xor1 & ~(xor1-1);
+        int x,y;
+        x=y=0;
+        for(int i=0;i<n;i++){
+        if(right_bit & nums[i]){
+            x = x ^ nums[i];
         }
-        vector<int>v;
-        for(int i=0;i<nums.size();i++){
-            if(m[nums[i]]==1)
-            v.push_back(nums[i]);
+        else
+            y = y ^ nums[i];
         }
-        sort(v.begin(),v.end());
-        return v;
+        ans.push_back(x);
+        ans.push_back(y);
+        sort(ans.begin(),ans.end());
+        return ans;
     }
 };
 
