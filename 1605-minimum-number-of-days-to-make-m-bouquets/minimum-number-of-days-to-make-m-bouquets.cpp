@@ -23,7 +23,7 @@ public:
             mini = min(mini, bloomDay[i]);
             maxi = max(maxi, bloomDay[i]);
         }
-        int low = mini, high = maxi;
+        int low = *min_element(bloomDay.begin(), bloomDay.end()), high = *max_element(bloomDay.begin(), bloomDay.end());
         while(low <= high){
             int mid = (low+high) / 2;
             if(!possible(bloomDay, mid, m, k)){
