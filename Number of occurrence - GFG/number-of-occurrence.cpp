@@ -10,40 +10,13 @@ class Solution{
 public:	
 	/* if x is present in arr[] then returns the count
 		of occurrences of x, otherwise returns 0. */
-		int lowerbound(int arr[],int n, int x){
-        int low=0,high=n-1,ans=n;
-        while(low<=high){
-            int mid=(low+high)/2;
-            if(arr[mid]>=x){
-                ans=mid;
-                high=mid-1;
-            }
-            else{
-                low=mid+1;
-            }
-        }
-        return ans;
-    }
-    int upperbound(int arr[],int n, int x){
-        int low=0,high=n-1,ans=n;
-        while(low<=high){
-           int mid=(low+high)/2;
-            if(arr[mid]>x){
-                ans=mid;
-                high=mid-1;
-            }
-            else{
-                low=mid+1;
-            }
-        }
-        return ans;
-    }
 	int count(int arr[], int n, int x) {
 	    // code here
-	    int lb=lowerbound(arr,n,x);
-	    int up=upperbound(arr,n,x)-1;
-	   // cout<<lb<<up;
-	    return up-lb+1;
+	    int cnt = 0;
+	    for(int i=0;i<n;i++){
+	        if(arr[i]==x) cnt++;
+	    }
+	    return cnt;
 	}
 };
 
