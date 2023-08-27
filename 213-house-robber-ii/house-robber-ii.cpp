@@ -19,7 +19,6 @@ public:
         if (n == 1) {
             return nums[0];
         }
-        
         int max1 = robRange(nums, 0, n - 2);  // Exclude the last house
         int max2 = robRange(nums, 1, n - 1);  // Exclude the first house
         
