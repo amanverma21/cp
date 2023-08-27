@@ -15,10 +15,21 @@ class Solution
     string reverseWord(string str)
     {
         // Your code goes here
+        // string ans="";
+        // int n=str.length();
+        // for(int i=n-1;i>=0;i--){
+        //     ans.push_back(str[i]);
+        // }
+        // return ans;
+        
+        stack<char>st;
+        for(char x:str){
+            st.push(x);
+        }
         string ans="";
-        int n=str.length();
-        for(int i=n-1;i>=0;i--){
-            ans.push_back(str[i]);
+        while(!st.empty()){
+            ans.push_back(st.top());
+            st.pop();
         }
         return ans;
     }
