@@ -9,7 +9,7 @@ public:
         if(nums[ind] <= target){
             take = solve(ind - 1, target - nums[ind], nums, dp); 
         }
-        return dp[ind][target] = take || not_take;  
+        return dp[ind][target] = take | not_take;  
     }
     
     bool canPartition(vector<int>& nums) {
