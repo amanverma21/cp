@@ -2,17 +2,14 @@ class Solution {
 public:
     int solve(int ind, int target, vector<int>& coins, vector<vector<int>>& dp) {
         if (target == 0) {
-            return 0;  // No coins needed for 0 amount
+            return 0; 
         }
-        
         if (ind < 0 || target < 0) {
-            return 1e9;  // Invalid combination of coins
+            return 1e9;  
         }
-        
         if (dp[ind][target] != -1) {
             return dp[ind][target];
         }
-        
         int not_take = solve(ind - 1, target, coins, dp);
         int take = 1e9;
         if (coins[ind] <= target) {
