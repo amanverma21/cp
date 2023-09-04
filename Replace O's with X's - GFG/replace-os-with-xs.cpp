@@ -31,7 +31,7 @@ public:
         vector<vector<int>> vis(n, vector<int>(m,0)); 
          for(int j = 0;j<m;j++) {
             if(!vis[0][j] && mat[0][j] == 'O') {
-                dfs(0, j, vis, mat, delrow, delcol); 
+                dfs(0, j, vis, mat, delrow,delcol); 
             }
             if(!vis[n-1][j] && mat[n-1][j] == 'O') {
                 dfs(n-1,j,vis,mat, delrow, delcol); 
