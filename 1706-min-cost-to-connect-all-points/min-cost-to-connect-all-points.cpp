@@ -19,7 +19,7 @@ public:
             }
             visited[curr] = true;
             cost += mindis[curr];
-            for (int v = 1; v < n; ++v) {
+            for (int v = 0; v < n; ++v) {
                 if (!visited[v]) {
                     int distance = mandist(points[curr], points[v]);
                     mindis[v] = min(mindis[v], distance);
