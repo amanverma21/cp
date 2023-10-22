@@ -8,7 +8,7 @@ public:
         while(i>0 || j < n-1){
             int left = (i>0) ? nums[i-1]:0;
             int right = (j<n-1) ? nums[j+1]:0;
-            if(left>=right){
+            if(left>right){
                 i--;
                 currmin = min(currmin, nums[i]);
             }
