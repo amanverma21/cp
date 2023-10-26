@@ -1,18 +1,16 @@
 class Solution {
 public:
-    int Recursion(int i, vector<int> &nums,vector<int>&dp)
-       	    {
-       	        if (i == 0) return nums[0];
-       	        if (i < 0) return 0;
-                if(dp[i]!=-1) return dp[i];
-       	        int pick = nums[i] + Recursion(i - 2, nums,dp);
-       	        int nonPick = 0 + Recursion(i - 1, nums,dp);
-       	        return dp[i]=max(pick, nonPick);
-       	    }
-       	int rob(vector<int> &nums)
-       	{
-       	    int n = nums.size();
-            vector<int>dp(n,-1);
-       	    return Recursion(n-1,nums,dp);
-       	}
+    int solve(int n, vector<int>&nums, vector<int>& dp){
+        if(n==0) return nums[n];
+        if(n<0) return 0;
+        if(dp[n]!=-1) return dp[n];
+        int pick = nums[n] + solve(n-2,nums,dp);
+        int notpick = 0 + solve(n-1,nums,dp);
+        return dp[n] = max(pick,notpick);
+    }
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        vector<int>dp(n,-1);
+        return solve(n-1,nums,dp);
+    }
 };
