@@ -1,8 +1,7 @@
 class Solution {
 public:
     int maxProfit(vector<int>& a) {
-
-                int n=a.size();
+        int n=a.size();
         vector<vector<int>>dp(n+2,vector<int>(2,0));
         for(int i=n-1;i>=0;i--)
         {
