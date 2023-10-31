@@ -1,0 +1,1 @@
+SELECT s.score, DENSE_RANK() OVER (ORDER BY s.score desc) as `rank` FROM Scores as s
