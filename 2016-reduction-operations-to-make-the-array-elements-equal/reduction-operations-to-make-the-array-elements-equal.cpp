@@ -1,22 +1,19 @@
 class Solution {
 public:
     int reductionOperations(vector<int>& nums) {
-        int freq[50001]={0};
-        int minN=50000, maxN=0;
-        #pragma unroll
-        for(int x: nums){
-            freq[x]++;
-            minN=min(minN, x);
-            maxN=max(maxN, x);
+        unordered_map<int,int>mp;
+        for(auto ele:nums)mp[ele]++;
+        sort(nums.begin() , nums.end());
+        int ind = 0, min = nums[0],n = nums.size();
+        while(ind<n and nums[ind] == min) ind++;
+        if(ind>=n) return 0;
+        int sum = 0;
+        int prev = -1e9;
+        for(int i=  n-1; i>=ind; i--){
+            if(nums[i]==prev) continue;
+            sum  +=  mp[nums[i]] + (n-1-i);
+            prev = nums[i];
         }
-        int count=0, sum=0;
-        #pragma unroll
-        for(int x=maxN; x>minN; x--){
-            if (freq[x] > 0) {
-                sum+=freq[x];
-                count+=sum;
-            }
-        }
-        return count;
+        return sum;
     }
 };
