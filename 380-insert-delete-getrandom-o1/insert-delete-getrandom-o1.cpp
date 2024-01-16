@@ -1,6 +1,7 @@
 class RandomizedSet {
     unordered_set <int> st;
 public:
+    const int mod = 1e9+7;
     RandomizedSet() {
        
     }
@@ -17,12 +18,12 @@ public:
         if(st.find(val)==st.end())return 0;
         else {
             st.erase(val);
-            return 10;
+            return 1;
         }
     }
     
     int getRandom() {
-        return *next(st.begin(),rand()%st.size()); 
+        return *next(st.begin(),rand()%st.size());
     }
 };
 
