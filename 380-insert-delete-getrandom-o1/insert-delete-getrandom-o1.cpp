@@ -17,7 +17,7 @@ public:
         if(st.find(val)==st.end())return 0;
         else {
             st.erase(val);
-            return 1;
+            return 10;
         }
     }
     
