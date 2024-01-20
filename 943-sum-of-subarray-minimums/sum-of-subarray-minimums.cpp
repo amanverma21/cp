@@ -16,11 +16,11 @@ public:
         int m = 1e9+7;
         vector<int> ans(n,0);
         for(int i = 0; i<n; i++){
-            if(prevsmall[i] == -1) ans[i] = ((i+1)*arr[i])%m;
-            else ans[i]=(ans[prevsmall[i]]+(arr[i]*(i-prevsmall[i]))%m)%m;
+            if(prevsmall[i] == -1) ans[i] = ((i+1)*arr[i])%mod;
+            else ans[i]=(ans[prevsmall[i]]+(arr[i]*(i-prevsmall[i]))%mod)%mod;
         }
-        int sum=0;
-        for(auto x:ans) sum=(sum+x)%m;
+        int sum = 0;
+        for(auto x: ans) sum = (sum+x)%mod;
         return sum;
 
     }
