@@ -2,20 +2,6 @@ class Solution {
 public:
     const int mod = 1e9+7;
     int sumSubarrayMins(vector<int>& arr) {
-        //NAIVE APPROACH
-        // // stack<int>st;
-        // // vector<int>ans;
-        // int sum=0;
-        // for(int i=0;i<arr.size();i++){
-        //     int minVal=arr[i];
-        //     for(int j=i;j<arr.size();j++){
-        //         minVal=min(minVal,arr[j]);
-        //         sum=(sum+minVal) % mod;
-        //     }
-        // }
-        // return sum;
-
-        //EFFICIENT Aproach
         int n = arr.size();
         stack<int> st;
         vector<int> prevsmall(n,-1);  
@@ -36,5 +22,6 @@ public:
         int sum=0;
         for(auto x:ans) sum=(sum+x)%m;
         return sum;
+
     }
 };
