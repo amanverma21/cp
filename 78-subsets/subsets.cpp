@@ -8,6 +8,9 @@ public:
                 subs.push_back(subs[i]); 
                 subs.back().push_back(num);
             }
+            // for(int i=0;i<subs.size();i++){
+            //     cout<<subs[num];
+            // }
         }
         return subs;
     }
