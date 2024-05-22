@@ -13,7 +13,6 @@ private:
     }
     void solve(int idx, string& s, vector<string>& output, vector<vector<string>>& ans, int n)
     {
-        // Base Case
         if(idx == n)
         {
             ans.push_back(output);
