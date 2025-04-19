@@ -7,6 +7,7 @@ public:
             auto a=lower_bound(nums.begin()+i+1,nums.end(),lower-nums[i])-nums.begin();
             auto b=upper_bound(nums.begin()+i+1,nums.end(),upper-nums[i])-nums.begin();
             ans+=b-a;
+            
         }
         return ans;
     }
