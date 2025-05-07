@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<vector<int>> directions{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-    //{t, {i, j}}
     typedef pair<int, pair<int, int>> P;
     int minTimeToReach(vector<vector<int>>& moveTime) {
         int m = moveTime.size();
@@ -11,7 +10,7 @@ public:
         priority_queue<P, vector<P>, greater<P>> pq; 
         result[0][0] = 0;
         pq.push({0, {0, 0}});
-        while(!pq.empty()) { //O(m*n * log(m*n))
+        while(!pq.empty()) {
             int currTime = pq.top().first;
             auto cell     = pq.top().second;
             int i = cell.first;
