@@ -11,10 +11,8 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
-        int len = 0;
-        if(head == NULL) return head;
-        head->next = removeElements(head->next, val);
-        return head->val == val ? head->next : head;
-
+        if(head ==NULL) return NULL;
+        head->next = removeElements(head->next,val);
+        return head->val == val ? head->next: head;
     }
 };
